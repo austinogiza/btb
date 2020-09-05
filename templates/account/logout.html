@@ -1,0 +1,41 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block css %}
+<title>Sign Out - Be The Best</title>{% endblock %}
+
+{% block content %}
+
+<main>
+
+  <section class="auth_page">
+
+    <div class="container">
+
+      <div class="desc">
+        
+<h1>{% trans "Sign Out" %}</h1>
+
+      </div>
+<div class="auth_form">
+  
+<p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+
+<form method="post" class="login" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button class="btn btn-login" type="submit">{% trans 'Sign Out' %}</button>
+</form>
+
+
+</div>
+    </div>
+  </section>
+  
+
+</main>
+{% endblock %}

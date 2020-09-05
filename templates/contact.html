@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+ {% block css %}
+<title>Contact Us - BTB</title>
+
+ {% endblock %}
+{% load static %}
+{% block content %}
+
+
+<section class="contact_hero">
+
+    <div class="container">
+        <div class="desc">
+            <h1>Reach out to us</h1>
+        
+        </div>
+        <div class="image">
+            <img src="{% static 'images/contact.svg' %}" alt="">
+       
+        </div>
+    </div>
+</section>
+
+<main>
+
+    <section class="contact_section">
+
+        <div class="container">
+
+<div class="office_section">
+    <div class="container">
+        <div class="office_box">
+
+            <div class="icon"><img src="{% static 'images/icon.svg' %}" alt=""></div>
+            <div class="office_text">
+                <h3>OFFICE</h3>
+                <h1>5678  Seltice Way Coeur D Alene, ID 12345</h1>
+                <p>Sed fringilla mauris sit amet nibh.
+                    Donec sodales sagittis</p>
+            </div>
+        </div>
+        <div class="office_box">
+
+            <div class="icon"><img src="{% static 'images/icon.svg' %}" alt=""></div>
+            <div class="office_text">
+                <h3>OFFICE</h3>
+                <h1>5678  Seltice Way Coeur D Alene, ID 12345</h1>
+                <p>Sed fringilla mauris sit amet nibh.
+                    Donec sodales sagittis</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="form-section">
+
+                <div class="title"><h1> <span class="orange">Get in touch</span> with <br> our support team</h1>
+                <p>We’d love to hear from you.</p></div>
+
+                <div class="form_container">
+                   <form class="form" method="post">
+                       
+{% csrf_token %}
+
+                    <label>
+                        <h1>Name:</h1>
+                  {{form.name}}
+
+
+                    </label>
+                    
+                    <label>
+                        <h1>Email:</h1>
+                        {{form.email}}
+
+
+
+                    </label>
+                    
+                    <label>
+                        <h1>Phone:</h1>
+                        {{form.phone}}
+
+                    </label>
+                           
+                    <label>
+                        <h1>Message:</h1>
+                        {{form.message}}
+
+                    </label>
+
+                    <button type="submit" class="btn btn-home">Send Message</button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+
+
+
+
+{% endblock content %}

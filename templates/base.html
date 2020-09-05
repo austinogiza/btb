@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+ <meta name="theme-color" content="#FFA500">
+
+ {% block css %}
+
+ {% endblock %}
+    
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.0-web/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.0-web/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.0-web/webfonts' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'font/flaticon.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'font/flaticon.woff' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'font/flaticon.woff2' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'font/flaticon.eot' %}" />
+</head>
+
+<body>
+
+    <nav class="main_nav">
+<div class="container">
+
+    <div class="logo"><a href="{% url 'btb:home' %}"><img src="{% static 'images/logo.svg' %}" alt=""></a></div>
+    <div class="nav_items">
+
+        <ul class="nav_links">
+            <li><a href="#">Competition</a></li>
+            <li><a href="#">Winners</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="signup">
+
+        <ul>
+           {% if request.user.is_authenticated %}
+             <li><a href="#">&#8358; 50000
+                <i class="fas fa-shopping-cart"></i></a></li>
+                   <li><a href="{% url 'account_logout' %}">Logout
+                <i class="fas fa-shopping-cart"></i></a></li>
+
+           {%else %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            <li><a href="#">&#8358; 50000
+                <i class="fas fa-shopping-cart"></i></a></li>
+           {% endif %}
+        </ul>
+    </div>
+</div>
+
+    </nav>
+{% block content %}
+
+
+{% endblock content %}
+
+<footer>
+
+    <div class="container">
+
+        <ul class="footer-container">
+            <li class="footer_link">
+
+                <a href="#">Term of Play</a>
+            </li>
+            <li class="footer_link">
+
+                <a href="#">Term of Play</a>
+            </li>
+            <li class="footer_link">
+
+                <a href="#">Term of Play</a>
+            </li>
+            <li class="footer_link">
+
+                <a href="#">Term of Play</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block css %}
+
+<title>Verify Your E-mail Address - Be The Best</title>
+
+{% endblock %}
+
+{% block content %}
+<main>
+
+  <section class="auth_page">
+
+    <div class="container">
+
+      <div class="desc">
+
+    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+
+      </div>
+<div class="auth_form">
+
+
+    <p>We have sent an e-mail to you for verification. <br>  Follow the link provided to finalize the signup process. <br> Please <a href="{% url 'btb:contact' %}" class="orange_link">contact us </a>if you do not receive it within a few minutes.</p>
+
+
+
+</div>
+    </div>
+  </section>
+  
+
+</main>{% endblock %}

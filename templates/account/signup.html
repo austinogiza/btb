@@ -1,0 +1,47 @@
+{% extends "account/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load i18n %}
+{% block css %}
+
+<title>Sign Up - Be The Best</title>
+
+{% endblock %}
+
+{% block content %}
+
+<main>
+
+  <section class="auth_page">
+
+    <div class="container">
+
+      <div class="desc">
+        
+<h1>{% trans "Sign Up" %}</h1>
+      </div>
+
+    <div class="auth_form">
+      
+
+<form class="login" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form|crispy }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button class="btn btn-login" type="submit">{% trans "Sign Up" %}</button>
+</form>
+<p>{% blocktrans %}Already have an account? <a class="orange_link"  href="{{ login_url }}">Sign in</a>.{% endblocktrans %}</p>
+
+    </div>
+    </div>
+  </section>
+  
+
+</main>
+
+
+
+{% endblock %}
