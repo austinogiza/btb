@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'cars',
     "django_countries",
     'allauth',
@@ -33,6 +34,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.sites',
     'crispy_forms',
+    'cart',
+    'ckeditor'
 
 ]
 
@@ -131,6 +134,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 AUTHENTICATION_BACKENDS = [
 
     'django.contrib.auth.backends.ModelBackend',
@@ -153,7 +158,7 @@ LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = False
 
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
-ACCOUNT_LOGOUT_REDIRECT_URL ="/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 ACCOUNT_SESSION_REMEMBER = True
 

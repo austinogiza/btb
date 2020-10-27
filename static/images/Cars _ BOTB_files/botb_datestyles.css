@@ -1,0 +1,21 @@
+﻿/* Prize Extension button */
+.date-20181203 .prize-ext-btn, .date-20181204 .prize-ext-btn, .date-20181205 .prize-ext-btn, .date-20181206 .prize-ext-btn, .date-20181207 .prize-ext-btn, .date-20181208 .prize-ext-btn, .date-20181209 .prize-ext-btn, .date-20181210 .prize-ext-btn, .date-20181211 .prize-ext-btn, .date-20181212 .prize-ext-btn, .date-20181213 .prize-ext-btn, .date-20181214 .prize-ext-btn, .date-20181215 .prize-ext-btn, .date-20181216 .prize-ext-btn, .date-20181217 .prize-ext-btn, .date-20181218 .prize-ext-btn {
+    background-color: #5fba7d;
+}
+
+    .date-20181203 .prize-ext-btn:hover, .date-20181204 .prize-ext-btn:hover, .date-20181205 .prize-ext-btn:hover, .date-20181206 .prize-ext-btn:hover, .date-20181207 .prize-ext-btn:hover, .date-20181208 .prize-ext-btn:hover, .date-20181209 .prize-ext-btn:hover, .date-20181210 .prize-ext-btn:hover, .date-20181211 .prize-ext-btn:hover, .date-20181212 .prize-ext-btn:hover, .date-20181213 .prize-ext-btn:hover, .date-20181214 .prize-ext-btn:hover, .date-20181215 .prize-ext-btn:hover, .date-20181216 .prize-ext-btn:hover, .date-20181217 .prize-ext-btn:hover, .date-20181218 .prize-ext-btn:hover {
+        background-color: #5fba7d;
+    }
+
+/* Christmas Nav Item */
+.christmas-nav-item a {
+    color: #ff8200 !important;
+}
+body:not(.date-20181203):not(.date-20181204):not(.date-20181205):not(.date-20181206):not(.date-20181207):not(.date-20181208):not(.date-20181209):not(.date-20181210):not(.date-20181211):not(.date-20181212):not(.date-20181213):not(.date-20181214):not(.date-20181215):not(.date-20181216):not(.date-20181217):not(.date-20181218) .christmas-nav-item {
+    display: none;
+}
+
+/* Blog Nav Item */
+.date-20181203 .blog-nav-item, .date-20181204 .blog-nav-item, .date-20181205 .blog-nav-item, .date-20181206 .blog-nav-item, .date-20181207 .blog-nav-item, .date-20181208 .blog-nav-item, .date-20181209 .blog-nav-item, .date-20181210 .blog-nav-item, .date-20181211 .blog-nav-item, .date-20181212 .blog-nav-item, .date-20181213 .blog-nav-item, .date-20181214 .blog-nav-item, .date-20181215 .blog-nav-item, .date-20181216 .blog-nav-item, .date-20181217 .blog-nav-item, .date-20181218 .blog-nav-item {
+    display: none;
+}

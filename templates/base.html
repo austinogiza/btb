@@ -25,67 +25,24 @@
 
 <body>
 
-    <nav class="main_nav">
-<div class="container">
 
-    <div class="logo"><a href="{% url 'btb:home' %}"><img src="{% static 'images/logo.svg' %}" alt=""></a></div>
-    <div class="nav_items">
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
-        <ul class="nav_links">
-            <li><a href="#">Competition</a></li>
-            <li><a href="#">Winners</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </div>
-    <div class="signup">
+{% include "navbar.html" %}
 
-        <ul>
-           {% if request.user.is_authenticated %}
-             <li><a href="#">&#8358; 50000
-                <i class="fas fa-shopping-cart"></i></a></li>
-                   <li><a href="{% url 'account_logout' %}">Logout
-                <i class="fas fa-shopping-cart"></i></a></li>
-
-           {%else %}
-            <li><a href="{% url 'account_login' %}">Login</a></li>
-            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li><a href="#">&#8358; 50000
-                <i class="fas fa-shopping-cart"></i></a></li>
-           {% endif %}
-        </ul>
-    </div>
-</div>
-
-    </nav>
 {% block content %}
 
 
 {% endblock content %}
 
-<footer>
 
-    <div class="container">
 
-        <ul class="footer-container">
-            <li class="footer_link">
-
-                <a href="#">Term of Play</a>
-            </li>
-            <li class="footer_link">
-
-                <a href="#">Term of Play</a>
-            </li>
-            <li class="footer_link">
-
-                <a href="#">Term of Play</a>
-            </li>
-            <li class="footer_link">
-
-                <a href="#">Term of Play</a>
-            </li>
-        </ul>
-    </div>
-</footer>
 </body>
 
 </html>

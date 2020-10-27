@@ -1,0 +1,35 @@
+{% load cart_template_tags %}
+{% load static %}
+
+
+<nav class="main_nav">
+<div class="container">
+
+    <div class="logo"><a href="{% url 'btb:home' %}"><img src="{% static 'images/logo.svg' %}" alt=""></a></div>
+    <div class="nav_items">
+
+        <ul class="nav_links">
+            <li><a href="#">Competition</a></li>
+            <li><a href="#">Winners</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="signup">
+        <!-- &#8358; -->
+        <ul>
+           {% if request.user.is_authenticated %}
+             <li><a href="#"> {{request.user|cart_item_price}}
+                <i class="fas fa-shopping-cart"></i></a></li>
+                   <li><a href="{% url 'account_logout' %}">Logout
+                    <i class="fas fa-sign-out-alt"></i></a></li>
+
+           {%else %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li class="btn btn-home"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+          
+           {% endif %}
+        </ul>
+    </div>
+</div>
+
+    </nav>

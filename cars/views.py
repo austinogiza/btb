@@ -1,8 +1,11 @@
-from django.shortcuts import render,redirect
-from django.views.generic import ListView, CreateView
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, CreateView, TemplateView, DetailView
 from .forms import ContactForm, CustomSignupForm
 from .models import Contact
+
+from cart.models import Item
 # Create your views here.
+
 
 def home(request):
     return render(request, 'index.html')
@@ -26,16 +29,22 @@ def contact(request):
         return redirect('btb:contact-success')
 
     context = {
-        'form':form
+        'form': form
     }
     return render(request, 'contact.html', context)
 
+
 def contact_success(request):
     return render(request, 'contact-success.html')
-
 
 
 class SignUp(CreateView):
     form_class = CustomSignupForm
     template_name = 'account/signup.html'
     success_url = '/'
+
+
+class CarsView(ListView):
+    model = Item
+    context_object_name = 'cars'
+    template_name = "price.html"

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block css %}
+<title>Cars - BTB</title>
+{% endblock %}
+
+
+{% block content %}
+
+<section class="price_hero">
+
+    <div class="container">
+
+
+
+
+
+    </div>
+</section>
+
+
+<section class="car_price">
+
+    <div class="car_row">
+{% for item in cars %}
+        <div class="car_col">
+
+            <div class="quantity">
+                <ul>
+
+                    <li><a href="{{item.get_add_one}}">1</a></li>
+                    <li><a href="{{item.get_add_five}}">5</a></li>
+                    <li><a href="{{item.get_add_ten}}">10</a></li>
+                    <li><a href="{{item.get_add_twenty}}">20</a></li>
+                    <li><a href="{{item.get_add_fifty}}">50</a></li>
+                    <li><a href=""><i class="fas fa-plus"></i></a></li>
+                </ul>
+            </div>
+
+            <h1>{{item.title|title}} </h1>
+            <p>Urus</p>
+            <img src="{{item.image.url}}" alt="{{item.title|title}} ">
+            <div class="price_alt"> &#8358; {{item.price|intcomma}} </div>
+        </div>
+{% endfor %}
+    </div>
+</section>
+
+
+{% endblock content %}
